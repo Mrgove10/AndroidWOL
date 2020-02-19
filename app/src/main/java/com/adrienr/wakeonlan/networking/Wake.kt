@@ -1,5 +1,7 @@
 package com.adrienr.wakeonlan.networking
 
+import android.util.Log
+import com.adrienr.wakeonlan.R
 import io.reactivex.Completable
 import java.net.DatagramPacket
 import java.net.DatagramSocket
@@ -41,6 +43,7 @@ object Wake {
      */
     @JvmOverloads
     fun sendPacket(host: String, mac: String, pass: String = "", port: Int = 7): Completable {
+        Log.d("Debug", "Sending WOL to $host $mac");
         return Completable.fromCallable {
             val macBytes = getMacBytes(mac)
             val passBytes =
