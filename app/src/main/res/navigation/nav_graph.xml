@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_addComputer"
+            app:destination="@id/addComputer" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -23,6 +26,15 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addComputer"
+        android:name="com.adrienr.wakeonlan.AddComputer"
+        android:label="@string/add_computer_fragment_label"
+        tools:layout="@layout/fragment_add_computer">
+        <action
+            android:id="@+id/action_addComputer_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
